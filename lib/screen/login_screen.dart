@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tugasakhir/screen/forgot_screen.dart';
+import 'package:tugasakhir/screen/home_screen.dart';
+import 'package:tugasakhir/screen/start_screen.dart';
+import 'package:tugasakhir/screen/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -26,13 +30,41 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Padding(
                     padding: EdgeInsets.only(top: 50, left: 10),
                     child: TweenAnimationBuilder(
-                      child: Text(
-                        "Welcome Back",
-                        style: TextStyle(
-                            fontSize: 60,
-                            color: Colors.white,
-                            fontFamily: "Raleway"),
-                      ),
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            SizedBox(
+                              height: 100,
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'Selamat Datang',
+                                style:TextStyle(
+                                  fontSize:50,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                )
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'Silahkan masukan data Anda',
+                                style:TextStyle(
+                                  fontSize:10,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white
+                                )
+                              ),
+                            ),
+                          ],
+                        ),                    
+                      ), 
                       tween: Tween<double>(begin: 0, end: 1),
                       duration: Duration(milliseconds: 500),
                       builder: (BuildContext context, double _value, child) {
@@ -72,9 +104,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ],
                           ),
-                          // *************************************************************************
-                          // ******************************Login*************************************
-                          // *************************************************************************
+
+
+                          // LOGIN
                           child: Column(
                             children: [
                               Row(
@@ -240,7 +272,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               Container(
                                 child: MaterialButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(context, 
+                                  MaterialPageRoute(
+                                    builder: ((context) => (HomeScreen())),)
+                                  );
+                                  },
                                   height: 45,
                                   padding: EdgeInsets.symmetric(
                                       vertical: 10, horizontal: 120),
@@ -274,9 +311,21 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                               ),
+                              Container(
+                                child: IconButton(icon: const Icon(Icons.arrow_back),
+                                onPressed: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context)=> (StartScreen())),);
+                                },
+                                ),
+                              )
                             ],
                           ),
                         ),
+
+                        //TWEEN
                         tween: Tween<double>(begin: 0, end: 1),
                         duration: Duration(milliseconds: 600),
                         builder: (BuildContext context, double _value, child) {
@@ -286,8 +335,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                       )
-
-                    // SIGN UP
                     : TweenAnimationBuilder(
                         child: Container(
                           width: double.infinity,
