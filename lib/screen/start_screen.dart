@@ -29,7 +29,7 @@ class _StartScreenState extends State<StartScreen> {
               padding: const EdgeInsets.only(top: 30, left: 10),
               child: TweenAnimationBuilder( // Title Animation
                 child: Text(
-                  "Find your Interest",
+                  "Ticket.go",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 70,
@@ -55,7 +55,7 @@ class _StartScreenState extends State<StartScreen> {
               decoration: BoxDecoration(
                 
                 image: DecorationImage(
-                    image: AssetImage('images/40.png'), fit: BoxFit.fill),
+                    image: AssetImage('images/1.png'), fit: BoxFit.fill),
               ),
             ),
             TweenAnimationBuilder( // Button Animation
