@@ -64,7 +64,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Yo! Forgot Your Password?",
+                            "Hai! Forgot Your Password?",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w800,
@@ -80,9 +80,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "No Worries! Enter Your email and we will send you a reset.",
+                            "Enter Your email and we will send you a reset.",
                             style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 16,
                               fontWeight: FontWeight.w300,
                               color: Colors.white,
                             ),
